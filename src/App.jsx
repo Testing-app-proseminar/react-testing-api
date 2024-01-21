@@ -7,6 +7,8 @@ import HomePage from "./pages/HomePage";
 import CardsPage from "./pages/CardsPage";
 import Navbar from "./components/Navbar";
 import IsPrivate from "./components/IsPrivate";
+import CardDetailsPage from "./pages/CardDetailsPage";
+import EditProjectPage from "./pages/EditProjectPage";
 
 function App() {
 
@@ -17,7 +19,9 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<HomePage/>} />
-        <Route path="/cards" element={< CardsPage />} />
+        <Route path="/cards" element={<IsPrivate>< CardsPage /></IsPrivate>} />
+        <Route path="/cards/:cardId" element={<CardDetailsPage/>}/>
+        <Route path="/cards/:cardId/edit" element={<EditProjectPage/>}/>
       </Routes>
     </>
   );
