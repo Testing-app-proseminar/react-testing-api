@@ -1,3 +1,8 @@
+import { expect, test, vi } from "vitest";
+import CardDetailsPage from "./CardDetailsPage";
+import { render, fireEvent, screen } from "@testing-library/react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import axios from "axios";
 
 const testCardData = {
   createdBy: "65a959899a29b2a85878c7ed",
@@ -21,4 +26,20 @@ vi.mock("react-router-dom", async (importOriginal) => {
       };
     },
   };
+});
+
+vi.mock("axios");
+
+test("display card details", async () => {
+  axios.get.mockResolvedValue({
+    data: testCardData,
+  });
+
+  render(
+    <BrowserRouter>
+      <CardDetailsPage />
+    </BrowserRouter>
+  );
+
+  expect(await screen.findByText("Lemmorld!")).toBeDefined();
 });
