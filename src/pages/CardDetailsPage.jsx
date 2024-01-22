@@ -46,8 +46,8 @@ function CardDetailsPage(props) {
             </table>
           </div>
 
-          <div>
-            <p>{card.content}</p>
+          <div className="card">
+            <h4>{card.content}</h4>
           </div>
 
 

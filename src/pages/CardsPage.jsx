@@ -6,11 +6,12 @@ function CardsPage() {
   const [cards, setCards] = useState([]);
 
   const getAllCards = () => {
-
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .get(`${import.meta.env.VITE_API_URL}/cards`, {headers: {Authorization: `Bearer ${storedToken}`}})
+      .get(`${import.meta.env.VITE_API_URL}/cards`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
       .then((response) => setCards(response.data))
       .catch((error) => console.log(error));
   };
@@ -21,15 +22,14 @@ function CardsPage() {
 
   return (
     <div className="CardsPage">
-
-
-
       {cards.map((card) => {
         return (
-          <div className="CardsPageCard" key={card._id}>
-            <Link to={`/cards/${card._id}`}>
-              <h3>{card.title}</h3>
-            </Link>
+          <div className="card" key={card._id}>
+            <div className="container">
+              <Link to={`/cards/${card._id}`}>
+                <h3>{card.title}</h3>
+              </Link>
+            </div>
           </div>
         );
       })}
