@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import AddCard from "../components/AddCard";
 
 function CardsPage() {
   const [cards, setCards] = useState([]);
@@ -23,7 +22,7 @@ function CardsPage() {
   return (
     <div className="CardsPage">
 
-      <AddCard/>
+
 
       {cards.map((card) => {
         return (
