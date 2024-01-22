@@ -50,9 +50,9 @@ function CardDetailsPage(props) {
             <p>{card.content}</p>
           </div>
 
-          <button>
-            <Link to={`${card.link}`}>Read more</Link>
-          </button>
+
+            <a href={card.link} target="_blank"><h3>Read more</h3></a>
+
         </>
       )}
 
