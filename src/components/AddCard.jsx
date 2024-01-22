@@ -74,9 +74,11 @@ function AddCard(props) {
         />
 
         <label>Content</label>
-        <input
+        <textarea
           type="text"
           name="content"
+          cols={50}
+          rows={10}
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
