@@ -1,11 +1,12 @@
 import AddCard from "../components/AddCard";
+import IsPrivate from "../components/IsPrivate";
 
 function HomePage() {
     return (
       <div>
-        <h1>Home Page</h1>
+        <h1>Testing app Proseminar</h1>
 
-        <AddCard/>
+        <IsPrivate><AddCard/></IsPrivate>
       </div>
     );
   }
